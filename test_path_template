@@ -1,0 +1,11 @@
+from fredag.path_template import render_template, extract_subject_tag
+
+def test_render_template():
+    meta = dict(year="2025", month2="10", month_abbr="Okt", sender="sb", domain="kundex.no", subject_tag="PRJ123")
+    p = render_template("{year}/{month2}_{month_abbr}/{domain}/{subject_tag}", meta)
+    assert str(p) == "2025/10_Okt/kundex.no/PRJ123"
+
+def test_extract_subject_tag():
+    subj = "Tilbud PRJ-45678 – fase 2"
+    rx = r"(PRJ-\d+)"
+    assert extract_subject_tag(subj, rx) == "PRJ-45678"
