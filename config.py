@@ -1,7 +1,7 @@
 from datetime import time
 
 # Helgestart (fredag)
-WEEKEND_CUTOFF = time(15, 15)
+WEEKEND_CUTOFF = time(16, 00)
 
 # Norske dagnavn
 DAGNAVN = ["mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag", "søndag"]
